@@ -4,9 +4,9 @@ import requests
 import base64
 from supabase import create_client, Client
 
-# Configuration - Hardcoded credentials
+# Configuration - Mixed approach for security
 SUPABASE_URL = 'https://fitvvzylzwmrcnaqvdpl.supabase.co'
-SUPABASE_KEY = 'sb_publishable_RK6iZCSkiOZASxnjyJzx1Q_R3-1Af8h'
+SUPABASE_KEY = os.environ.get('SUPABASE_SERVICE_KEY', '')  # Service role key from environment
 TELERIVET_API_KEY = '8voX9_i9PFBaYkZBpxUDjrVFl7to4AcHK1kr'
 TELERIVET_PROJECT_ID = 'PJ70b1be86f33fe9cb'
 DATA_SOURCE_FILE = 'river_data.json' 
